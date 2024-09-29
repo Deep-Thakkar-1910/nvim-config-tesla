@@ -65,7 +65,7 @@ vim.keymap.set("n", "g*", "g*zz", opts)
 vim.keymap.set("n", "g#", "g#zz", opts)
 
 -- map ; to resume last search
--- map("n", ";", "<cmd>Telescope resume<cr>", opts)
+vim.keymap.set("n", ";", "<cmd>Telescope resume<cr>", opts)
 
 -- search current buffer
 -- vim.keymap.set("n", "<C-s>", ":Telescope current_buffer_fuzzy_find<CR>", opts)

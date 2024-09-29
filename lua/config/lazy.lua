@@ -13,8 +13,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
-local plugins={}
-local opts={}
 
 require("lazy").setup({import = "plugins"}, {
   install = {
@@ -22,13 +20,14 @@ require("lazy").setup({import = "plugins"}, {
   },
   checker = {
     enabled = true,
-    notify = false,
+    notify = true,
   },
   change_detection = {
     enabled = true,
-    notify = false,
+    notify = true,
   },
   ui = {
+	theme = "tokyonight-night",
     border = "rounded"
   },
   })
