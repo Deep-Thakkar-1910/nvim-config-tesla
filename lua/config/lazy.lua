@@ -14,17 +14,17 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({import = "plugins"}, {
+require("lazy").setup({{import = "plugins"},{import = "plugins.lsp"}}, {
   install = {
     missing = true,
   },
   checker = {
     enabled = true,
-    notify = true,
+    notify = false,
   },
   change_detection = {
     enabled = true,
-    notify = true,
+    notify = false,
   },
   ui = {
 	theme = "tokyonight-night",
