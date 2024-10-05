@@ -1,7 +1,6 @@
 local opts = { noremap = true, silent = true }
 -- local map = vim.keymap.set
 
-
 -- Keep cursor centered when scrolling
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
@@ -44,8 +43,8 @@ vim.keymap.set({ "n", "x", "o" }, "H", "^", opts)
 vim.keymap.set({ "n", "x", "o" }, "L", "g_", opts)
 
 -- Navigate buffers
-vim.keymap.set("n", "<Right>", ":bnext<CR>", opts)
-vim.keymap.set("n", "<Left>", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<C-Right>", ":bnext<CR>", opts)
+vim.keymap.set("n", "<C-Left>", ":bprevious<CR>", opts)
 
 -- Panes resizing
 vim.keymap.set("n", "+", ":vertical resize +5<CR>")
@@ -86,7 +85,6 @@ vim.keymap.set("n", "<C-a>", "ggVG", opts)
 -- w{number}dw
 -- delete backward
 -- w{number}db
-
 
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 

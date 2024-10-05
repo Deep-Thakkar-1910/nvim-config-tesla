@@ -32,7 +32,7 @@ vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
 vim.opt.cursorline = true -- highlight the current line
 vim.opt.number = true -- set numbered lines
 vim.opt.breakindent = true -- wrap lines with indent
-vim.opt.relativenumber = false -- set relative numbered lines
+vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.numberwidth = 4 -- set number column width to 2 {default 4}
 vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 vim.opt.wrap = false -- display lines as one long line
@@ -47,19 +47,19 @@ vim.opt.fillchars = { eob = " " } -- change the character at the end of buffer
 -- vim.opt.guicursor = "|"                          -- set the cursor to be a vertical bar
 
 -- vim.opt.cursorlineopt = "number"              -- set the cursorline
-vim.opt.tabstop = 4                           -- insert 2 spaces for a tab
+vim.opt.tabstop = 4 -- insert 2 spaces for a tab
 vim.opt.laststatus = 0 -- Always display the status line
 
 vim.filetype.add({
-  extension = {
-    env = "dotenv",
-  },
-  filename = {
-    [".env"] = "dotenv",
-    ["env"] = "dotenv",
-  },
-  pattern = {
-    ["[jt]sconfig.*.json"] = "jsonc",
-    ["%.env%.[%w_.-]+"] = "dotenv",
-  },
+	extension = {
+		env = "dotenv",
+	},
+	filename = {
+		[".env"] = "dotenv",
+		["env"] = "dotenv",
+	},
+	pattern = {
+		["[jt]sconfig.*.json"] = "jsonc",
+		["%.env%.[%w_.-]+"] = "dotenv",
+	},
 })
