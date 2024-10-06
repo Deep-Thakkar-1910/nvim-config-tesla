@@ -12,6 +12,12 @@ return {
 			-- install jsregexp (optional!).
 			build = "make install_jsregexp",
 		},
+		{
+			"zbirenbaum/copilot-cmp",
+			config = function()
+				require("copilot_cmp").setup()
+			end,
+		},
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
@@ -46,16 +52,20 @@ return {
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp" },
-				{ name = "luasnip" }, -- snippets
-				{ name = "buffer" }, -- text within current buffer
-				{ name = "path" }, -- file system paths
+				{ name = "copilot", group_index = 2 },
+				-- Other Sources
+				{ name = "nvim_lsp", group_index = 2 },
+				{ name = "path", group_index = 2 },
+				{ name = "buffer", group_index = 2 },
+				{ name = "luasnip", group_index = 2 },
 			}),
 
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {
 				format = lspkind.cmp_format({
-					maxwidth = 50,
+					mode = "symbol",
+					max_width = 50,
+					symbol_map = { Copilot = "" },
 					ellipsis_char = "...",
 				}),
 			},

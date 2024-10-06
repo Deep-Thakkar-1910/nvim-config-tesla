@@ -105,3 +105,11 @@ vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab"
 vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 -- ctrl + x to cut full line
 vim.keymap.set("n", "<C-x>", "dd", opts)
+
+-- to move line up or down like vscode
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==") -- move line down for normal modne
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==") -- move line up for normal mode
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line down for visual mode
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line up for visual mode
+vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi") -- move line down for insert mode
+vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi") -- move line up for insert mode
