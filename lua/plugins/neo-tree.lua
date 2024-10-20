@@ -49,10 +49,10 @@ return {
 					},
 				},
 			},
-			window = {
-				position = "float",
-				width = 35,
-			},
+			-- window = {
+			-- 	position = "float",
+			-- 	width = 35,
+			-- },
 			filesystem = {
 				use_libuv_file_watcher = true,
 				filtered_items = {
