@@ -113,3 +113,7 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv") -- move line down for visual mo
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv") -- move line up for visual mode
 vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi") -- move line down for insert mode
 vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi") -- move line up for insert mode
+
+-- add new line insde the normal mode
+vim.keymap.set("n", "<Leader>o", "o<Esc>", { desc = "New line below without insert" })
+vim.keymap.set("n", "<Leader>O", "O<Esc>", { desc = "New line above without insert" })
